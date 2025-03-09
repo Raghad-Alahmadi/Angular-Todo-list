@@ -1,4 +1,3 @@
-
 <div class="todo-container">
     <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
       <input formControlName="taskName" placeholder="Enter a task" />
@@ -19,5 +18,6 @@
         <button (click)="onDelete(task.id)">Delete</button>
       </li>
     </ul>
-  </div>
   
+    <button (click)="onUndo()">Undo</button>
+  </div>
