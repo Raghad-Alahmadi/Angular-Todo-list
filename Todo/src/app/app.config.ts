@@ -4,10 +4,11 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
 import { taskReducer } from './store/task.reducer';
-import { TaskEffects } from './store/task.effects'; 
+import { TaskEffects } from './store/task.effects';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -16,6 +17,6 @@ export const appConfig: ApplicationConfig = {
     provideStore({ tasks: taskReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: false }),
     provideEffects([TaskEffects]),
-    HttpClientModule // Add HttpClientModule to the providers array
+    HttpClientModule // Ensure HttpClientModule is included
   ]
 };

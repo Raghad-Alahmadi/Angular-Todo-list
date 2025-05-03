@@ -16,7 +16,10 @@
   <h3>Documents</h3>
   <ul>
     <li *ngFor="let document of documents">
-      {{ document.name }}
+      <strong>Title:</strong> {{ document.title }}<br />
+      <strong>Status:</strong> {{ document.status }}<br />
+      <strong>Verification Code:</strong> {{ document.verificationCode }}<br />
+      <strong>File Path:</strong> {{ document.filePath }}
     </li>
   </ul>
 </div>
